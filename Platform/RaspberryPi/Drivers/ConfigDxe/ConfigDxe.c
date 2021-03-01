@@ -585,19 +585,19 @@ ApplyVariables (
    * 13          TDO         GPIO24    ALT4    18
    */
   if (PcdGet32 (PcdDebugEnableJTAG)) {
-    GpioPinFuncSet (22, GPIO_FSEL_ALT4);
-    GpioPinFuncSet (26, GPIO_FSEL_ALT4);
-    GpioPinFuncSet (27, GPIO_FSEL_ALT4);
-    GpioPinFuncSet (25, GPIO_FSEL_ALT4);
-    GpioPinFuncSet (23, GPIO_FSEL_ALT4);
-    GpioPinFuncSet (24, GPIO_FSEL_ALT4);
+    GpioPinFuncSet (22, GPIO_FSEL_ALT4); GpioSetPull(22, GPIO_PULL_NONE);
+    GpioPinFuncSet (23, GPIO_FSEL_ALT4); GpioSetPull(23, GPIO_PULL_NONE);
+    GpioPinFuncSet (24, GPIO_FSEL_ALT4); GpioSetPull(24, GPIO_PULL_NONE);
+    GpioPinFuncSet (25, GPIO_FSEL_ALT4); GpioSetPull(25, GPIO_PULL_NONE);
+    GpioPinFuncSet (26, GPIO_FSEL_ALT4); GpioSetPull(26, GPIO_PULL_NONE);
+    GpioPinFuncSet (27, GPIO_FSEL_ALT4); GpioSetPull(27, GPIO_PULL_NONE);
   } else {
     GpioPinFuncSet (22, GPIO_FSEL_INPUT);
-    GpioPinFuncSet (26, GPIO_FSEL_INPUT);
-    GpioPinFuncSet (27, GPIO_FSEL_INPUT);
-    GpioPinFuncSet (25, GPIO_FSEL_INPUT);
     GpioPinFuncSet (23, GPIO_FSEL_INPUT);
     GpioPinFuncSet (24, GPIO_FSEL_INPUT);
+    GpioPinFuncSet (25, GPIO_FSEL_INPUT);
+    GpioPinFuncSet (26, GPIO_FSEL_INPUT);
+    GpioPinFuncSet (27, GPIO_FSEL_INPUT);
   }
 
   if (FanOnGpio) {
